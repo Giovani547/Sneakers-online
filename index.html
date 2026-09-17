@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gio23 SNEAKERS MXLeo10 | Tienda Oficial</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif}
+body{background:#080808;color:#fff}
+header{position:sticky;top:0;z-index:99;background:rgba(8,8,8,.9);backdrop-filter:blur(12px);padding:16px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1f1f1f}
+header h2{letter-spacing:3px;font-weight:900}
+.btn-green{background:#25D366;color:#fff;padding:10px 20px;border-radius:30px;text-decoration:none;font-weight:800}
+.hero{text-align:center;padding:60px 20px;background:radial-gradient(circle at top,#1a1a1a,#080808)}
+.hero h1{font-size:42px;font-weight:900}
+.hero p{color:#888;margin-top:8px}
+.grid{max-width:1250px;margin:30px auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:22px;padding:0 20px}
+.card{background:linear-gradient(180deg,#171717,#111);border:1px solid #222;border-radius:20px;overflow:hidden;cursor:pointer;transition:.3s}
+.card:hover{transform:translateY(-8px);border-color:#555}
+.card img{width:100%;height:270px;object-fit:cover;background:#fff;display:block}
+.tag{font-size:10px;background:#fff;color:#000;padding:4px 8px;border-radius:6px;font-weight:900}
+.card .info{padding:14px}
+.card h3{margin:8px 0;font-size:15px;min-height:40px}
+.price{font-size:19px;font-weight:900}
+#detalle{position:fixed;inset:0;background:#000;z-index:200;display:none;overflow-y:auto}
+#detalle.active{display:block}
+.det-top{max-width:1200px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#000;border-bottom:1px solid #222}
+.det-main{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;padding:30px 20px}
+@media(max-width:900px){.det-main{grid-template-columns:1fr}}
+.det-main img{width:100%;border-radius:24px;background:#fff;aspect-ratio:1/1;object-fit:cover}
+.close{width:42px;height:42px;border-radius:50%;background:#1a1a1a;display:grid;place-items:center;cursor:pointer;font-size:20px}
+.sizes{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 22px 0}
+.size{border:1px solid #333;padding:11px 18px;border-radius:12px;cursor:pointer;font-weight:700}
+.size.active{background:#fff;color:#000}
+.pay-box{background:#111;border:1px solid #222;border-radius:16px;padding:18px;margin-top:20px}
+.pay-method{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid #222;border-radius:12px;margin-bottom:10px;cursor:pointer}
+.pay-method.active{border-color:#25D366;background:#0f1a12}
+.pay-method small{color:#888;display:block}
+.btn-buy{width:100%;background:#25D366;color:#fff;border:none;padding:17px;border-radius:14px;font-size:17px;font-weight:900;cursor:pointer;margin-top:14px}
+.btn-back{width:100%;background:#1a1a1a;color:#fff;border:none;padding:14px;border-radius:14px;margin-top:10px;cursor:pointer}
+footer{border-top:1px solid #1a1a1a;padding:30px;text-align:center;color:#666;margin-top:40px}
+</style>
+</head>
+<body>
+<header><h2>G23 SNEAKERS MX</h2><a class="btn-green" href="https://wa.me/525636364852">56 3636 4852</a></header>
+<div class="hero"><h1>GiovaniSneakers J23 🔥</h1><p>9 Pares Premium • Entregas Atizapán / Nicolás Romero • Envíos Nacionales • 100% Confiable</p></div>
+<div class="grid" id="grid"></div>
+
+<div id="detalle">
+<div class="det-top"><div class="close" onclick="cerrar()">✕</div><div style="color:#666" id="d-breadcrumb">Detalle</div><a class="btn-green" href="https://wa.me/525636364852">WhatsApp</a></div>
+<div class="det-main">
+<img id="d-img" src="">
+<div>
+<span id="d-tag" class="tag">NUEVO</span>
+<h1 id="d-title" style="font-size:32px;margin:12px 0;font-weight:900"></h1>
+<div id="d-price" style="font-size:28px;font-weight:900"></div>
+<p style="color:#999;margin-top:10px">Par 100% original 1:1 G5 con caja, etiqueta y cubre polvo. Cambios por talla en 24hrs en punto medio.</p>
+<h4 style="margin-top:20px">Elige tu talla MX</h4>
+<div class="sizes" id="d-sizes"></div>
+<div class="pay-box">
+<h3>💳 Métodos de pago</h3>
+<div class="pay-method active" onclick="selPay(this,'Transferencia BBVA')"><div><b>Transferencia BBVA / Bancoppel</b><small>Envío inmediato</small></div></div>
+<div class="pay-method" onclick="selPay(this,'OXXO Pay')"><div><b>OXXO Pay</b><small>Ficha con referencia 24h</small></div></div>
+<div class="pay-method" onclick="selPay(this,'Mercado Pago')"><div><b>Mercado Pago / Tarjeta</b><small>MSI disponible</small></div></div>
+<div class="pay-method" onclick="selPay(this,'Contraentrega')"><div><b>Contraentrega</b><small>Atizapán / Nicolás Romero</small></div></div>
+<p id="pay-info" style="margin-top:10px;background:#0e0e0e;padding:10px;border-radius:8px;color:#aaa;font-size:13px">Te mando datos por WhatsApp al confirmar.</p>
+</div>
+<button class="btn-buy" id="d-buy">Confirmar por WhatsApp - 56 3636 4852</button>
+<button class="btn-back" onclick="cerrar()">← Seguir viendo</button>
+</div>
+</div>
+</div>
+
+<footer>G23Messi SNEAKERS MX © 2026 | WhatsApp 56 3636 4852 | Envíos por Estafeta / FedEx</footer>
+
+<script>
+const productos = [
+{id:1, nombre:"Jordan 1 Retro High Chicago", precio:2499, tag:"MÁS VENDIDO", img:"https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=800&q=80", tallas:[6,6.5,7,7.5,8,8.5,9]},
+{id:2, nombre:"Nike Air Max 90 Triple White", precio:2199, tag:"NUEVO", img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80", tallas:[5,6,6.5,7,8]},
+{id:3, nombre:"Adidas Forum Low White Green", precio:1899, tag:"CLÁSICO", img:"https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=800&q=80", tallas:[6,7,7.5,8,9]},
+{id:4, nombre:"Jordan 4 Retro Black Cat", precio:2799, tag:"JORDAN", img:"https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80", tallas:[6,7,8,9]},
+{id:5, nombre:"Nike Dunk Low Panda", precio:2299, tag:"TREND", img:"https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=800&q=80", tallas:[6,6.5,7,7.5,8]},
+{id:6, nombre:"Adidas Yeezy Boost 350 V2", precio:2599, tag:"YEEZY", img:"https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=800&q=80", tallas:[6,7,8,8.5]},
+{id:7, nombre:"New Balance 550 White Green", precio:2150, tag:"NB", img:"https://images.unsplash.com/photo-1555274175-6cbf6f3b137b?w=800&q=80", tallas:[6,7,7.5,8]},
+{id:8, nombre:"Jordan 11 Retro Cherry", precio:3199, tag:"PREMIUM", img:"https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&q=80", tallas:[6,7,8,9]},
+{id:9, nombre:"Adidas Forum Low - Últimas Tallas", precio:1899, tag:"OFERTA", img:"https://images.unsplash.com/photo-1608231387042-66d1773070a?w=800&q=80", tallas:[7,7.5]},
+];
+const grid=document.getElementById('grid');
+productos.forEach(p=>{
+grid.innerHTML+=`<div class="card" onclick="abrir(${p.id})"><img src="${p.img}" loading="lazy"><div class="info"><span class="tag">${p.tag}</span><h3>${p.nombre}</h3><div class="price">$${p.precio} MXN</div></div></div>`;
+});
+let tallaSel=null; let pagoSel='Transferencia BBVA';
+function abrir(id){
+const p=productos.find(x=>x.id===id);
+document.getElementById('d-img').src=p.img;
+document.getElementById('d-title').innerText=p.nombre;
+document.getElementById('d-breadcrumb').innerText=p.nombre;
+document.getElementById('d-price').innerText=`$${p.precio} MXN`;
+document.getElementById('d-tag').innerText=p.tag;
+document.getElementById('d-sizes').innerHTML=p.tallas.map(t=>`<div class="size" onclick="selTalla(this,'${t}')">${t}</div>`).join('');
+document.getElementById('d-buy').onclick=()=>{
+if(!tallaSel){alert('Elige tu talla primero bro');return;}
+const msg=`Hola G23 quiero:%0A👟 ${p.nombre}%0A📏 Talla: ${tallaSel}%0A💰 $${p.precio}%0A💳 Pago: ${pagoSel}`;
+window.open(`https://wa.me/525636364852?text=${msg}`,'_blank');
+};
+document.getElementById('detalle').classList.add('active');
+window.scrollTo(0,0);
+}
+function selTalla(el,t){document.querySelectorAll('.size').forEach(s=>s.classList.remove('active'));el.classList.add('active');tallaSel=t;}
+function selPay(el,m){document.querySelectorAll('.pay-method').forEach(s=>s.classList.remove('active'));el.classList.add('active');pagoSel=m;document.getElementById('pay-info').innerText=`Pago por ${m} - te mando datos por WhatsApp al confirmar`;}
+function cerrar(){document.getElementById('detalle').classList.remove('active');tallaSel=null;}
+</script>
+</body>
+</html>
