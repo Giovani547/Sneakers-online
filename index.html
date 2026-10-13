@@ -210,7 +210,152 @@ var BANNERS=[
    price:0 = "Consultar precio". rating/reviews opcionales: solo ponlos si son reales. */
 /* Fotos: img/m01-1.jpg, m01-2.jpg, m01-3.jpg (modelo 1), m02-1.jpg... Mientras no subas la foto se ve una ilustración del color. */
 function im(n){return [1,2,3].map(function(i){return "img/m"+(n<10?"0":"")+n+"-"+i+".jpg"})}
+var D="Modelo disponible en varias tallas. Pregunta por colores y video del par.";
+var Z=[25,26,27,28,29];
 /* PRECIOS DE EJEMPLO: cámbialos por los tuyos. */
 var PRODUCTS=[
- {id:1,name:"Air Force 1 Blanco",brand:"Nike",cat:"Clásicos",icon:"👟",price:1299,old:1599,sizes:[25,26,27,28,29],imgs:im(1),col:["#fafafa", "#d4d4d4", "#f1f1f1"],tag:"Más pedido",desc:"Modelo disponible en varias tallas. Pregunta por colores y video del par."},
- {id:2,name:"Clásico Blanco/Verde",brand:"Adidas",cat:"Clásicos",icon:"👟",price:1199,old:0,sizes:[
+ {id:1,name:"Air Force 1 Blanco",brand:"Nike",cat:"Clásicos",icon:"👟",price:1299,old:1599,sizes:Z,imgs:im(1),col:["#fafafa","#d4d4d4","#f1f1f1"],tag:"Más pedido",desc:D},
+ {id:2,name:"Clásico Blanco/Verde",brand:"Adidas",cat:"Clásicos",icon:"👟",price:1199,old:0,sizes:Z,imgs:im(2),col:["#fafafa","#16a34a","#f1f1f1"],tag:"",desc:D},
+ {id:3,name:"Clásico Negro/Dorado",brand:"Nike",cat:"Clásicos",icon:"👟",price:1399,old:1699,sizes:Z,imgs:im(3),col:["#1a1a1a","#d4a843","#f2f2f2"],tag:"",desc:D},
+ {id:4,name:"Clásico Crema",brand:"Puma",cat:"Clásicos",icon:"👟",price:1099,old:0,sizes:Z,imgs:im(4),col:["#efe3c8","#b08a4a","#ffffff"],tag:"Nuevo",desc:D},
+ {id:5,name:"Basket Alta Rojo/Negro",brand:"Jordan",cat:"Basket",icon:"🏀",price:1899,old:2299,sizes:Z,imgs:im(5),col:["#c1121f","#111111","#f2f2f2"],tag:"Más pedido",desc:D},
+ {id:6,name:"Basket Alta Azul",brand:"Jordan",cat:"Basket",icon:"🏀",price:1799,old:0,sizes:Z,imgs:im(6),col:["#1d4ed8","#ffffff","#ffffff"],tag:"",desc:D},
+ {id:7,name:"Basket Alta Negro/Oro",brand:"Jordan",cat:"Basket",icon:"🏀",price:1999,old:2399,sizes:Z,imgs:im(7),col:["#111111","#f2c230","#222222"],tag:"Nuevo",desc:D},
+ {id:8,name:"Basket Alta Morado",brand:"Nike",cat:"Basket",icon:"🏀",price:1699,old:0,sizes:Z,imgs:im(8),col:["#6d28d9","#f2c230","#ffffff"],tag:"",desc:D},
+ {id:9,name:"Runner Gris/Naranja",brand:"New Balance",cat:"Running",icon:"🏃",price:1499,old:1799,sizes:Z,imgs:im(9),col:["#6b7280","#f97316","#ffffff"],tag:"Más pedido",desc:D},
+ {id:10,name:"Runner Negro",brand:"Nike",cat:"Running",icon:"🏃",price:1599,old:0,sizes:Z,imgs:im(10),col:["#111111","#555555","#ffffff"],tag:"",desc:D},
+ {id:11,name:"Runner Azul/Neón",brand:"Adidas",cat:"Running",icon:"🏃",price:1699,old:1999,sizes:Z,imgs:im(11),col:["#1e3a8a","#a3e635","#ffffff"],tag:"Nuevo",desc:D},
+ {id:12,name:"Runner Blanco/Rosa",brand:"Puma",cat:"Running",icon:"🏃",price:1399,old:0,sizes:Z,imgs:im(12),col:["#ffffff","#ec4899","#ffffff"],tag:"",desc:D},
+ {id:13,name:"Casual Beige",brand:"New Balance",cat:"Casual",icon:"👞",price:1299,old:0,sizes:Z,imgs:im(13),col:["#d6c3a1","#8b6b3d","#ffffff"],tag:"",desc:D},
+ {id:14,name:"Casual Verde Olivo",brand:"Adidas",cat:"Casual",icon:"👞",price:1249,old:1499,sizes:Z,imgs:im(14),col:["#556b2f","#e5d9b6","#f2f2f2"],tag:"",desc:D},
+ {id:15,name:"Casual Negro Total",brand:"Puma",cat:"Casual",icon:"👞",price:1149,old:0,sizes:Z,imgs:im(15),col:["#161616","#2f2f2f","#161616"],tag:"",desc:D},
+ {id:16,name:"Casual Rojo",brand:"Nike",cat:"Casual",icon:"👞",price:1349,old:0,sizes:Z,imgs:im(16),col:["#dc2626","#ffffff","#ffffff"],tag:"",desc:D}
+];
+var REVIEWS=[{n:"Cliente 1",t:"Pega aquí un comentario real de un cliente."},{n:"Cliente 2",t:"Pega aquí un comentario real de un cliente."},{n:"Cliente 3",t:"Pega aquí un comentario real de un cliente."}];
+/* ============================================== */
+
+var ART=function(c){c=c||["#fafafa","#d9d9d9","#f4f4f4"];return '<svg viewBox="0 0 240 150" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="1.4" stroke-linejoin="round"><ellipse cx="122" cy="132" rx="100" ry="7" fill="rgba(0,0,0,.14)" stroke="none"/><path d="M18 112c0-8 8-10 16-10h172c16 0 22 6 20 14-2 8-12 10-22 10H40c-14 0-22-4-22-14z" fill="'+c[2]+'"/><path d="M26 102c-2-18 8-26 24-32l28-12c6-8 14-18 26-20l8 14c8 12 26 16 48 20 30 6 58 12 62 28l2 4H26z" fill="'+c[0]+'"/><path d="M170 74c26 4 46 12 52 26l2 4h-48c0-12-2-22-6-30z" fill="'+c[1]+'"/><path d="M26 102c-2-14 2-22 12-28l14-4 6 32z" fill="'+c[1]+'"/><path d="M78 58c6-8 14-18 26-20l8 14-16 8z" fill="rgba(0,0,0,.3)"/><path d="M62 98c22-6 44-18 62-28l8 4c-20 14-40 24-62 30z" fill="'+c[1]+'"/><path d="M110 50l14 8M118 44l14 8M126 40l12 8" stroke="rgba(255,255,255,.85)" stroke-width="2.2" stroke-linecap="round"/><path d="M30 112h190" stroke="rgba(0,0,0,.12)"/></svg>'};
+var $=function(i){return document.getElementById(i)};
+var wa=function(t){return "https://wa.me/"+CFG.wa+(t?"?text="+encodeURIComponent(t):"")};
+var money=function(n){return "$"+n.toLocaleString("es-MX")};
+function sil(c){var d=document.createElement("div");d.className="sil";d.innerHTML=ART(c);return d}
+function mk(src,alt,cls,c){var im=document.createElement("img");if(cls)im.className=cls;im.alt=alt||"";im.loading="lazy";im.onerror=function(){if(!im.parentNode)return;if(cls==="b")im.remove();else im.replaceWith(sil(c))};im.src=src;return im}
+var cart=[];try{cart=JSON.parse(localStorage.getItem("cart23")||"[]")}catch(e){}
+function save(){try{localStorage.setItem("cart23",JSON.stringify(cart))}catch(e){}}
+function find(id){return PRODUCTS.filter(function(p){return p.id===id})[0]}
+var S={q:"",cat:"Todos",brand:"",size:0,min:0,max:0,sort:"0"};
+
+["fWa","fab"].forEach(function(i){$(i).href=wa("Hola, quiero ver el catálogo")});$("fIg").href=CFG.ig;$("fX").href=CFG.x;
+
+/* banners */
+var cur=0,tm;
+BANNERS.forEach(function(b,i){
+  var s=document.createElement("div");s.className="sl"+(i?"":" on");
+  s.style.backgroundColor=b.bg;s.style.backgroundImage="linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.15)),url("+b.img+")";
+  s.innerHTML='<div class="wrap"><h2></h2><p></p><a class="btn"></a></div><div class="ba"></div>';s.querySelector(".ba").appendChild(sil(b.col));
+  s.querySelector("h2").textContent=b.t;s.querySelector("p").textContent=b.s;
+  var a=s.querySelector("a");a.textContent=b.cta;a.href=b.href==="wa"?wa("Hola, quiero ver lo más nuevo"):b.href;if(b.href==="wa"){a.target="_blank";a.rel="noopener"}
+  $("slides").appendChild(s);
+  var d=document.createElement("button");d.className=i?"":"on";d.setAttribute("aria-label","Banner "+(i+1));d.onclick=function(){go(i);auto()};$("dots").appendChild(d);
+});
+function go(i){cur=i;[].forEach.call($("slides").children,function(s,k){s.classList.toggle("on",k===i)});[].forEach.call($("dots").children,function(d,k){d.classList.toggle("on",k===i)})}
+function auto(){clearInterval(tm);if(BANNERS.length>1&&!matchMedia("(prefers-reduced-motion:reduce)").matches)tm=setInterval(function(){go((cur+1)%BANNERS.length)},5500)}auto();
+
+/* nav, tiles, filters */
+var cats=["Todos"];PRODUCTS.forEach(function(p){if(cats.indexOf(p.cat)<0)cats.push(p.cat)});
+var brands=[],sizes=[];PRODUCTS.forEach(function(p){if(brands.indexOf(p.brand)<0)brands.push(p.brand);p.sizes.forEach(function(z){if(sizes.indexOf(z)<0)sizes.push(z)})});sizes.sort();
+function setCat(c){S.cat=c;draw();$("catalogo").scrollIntoView()}
+cats.forEach(function(c){var a=document.createElement("a");a.href="#catalogo";a.textContent=c;a.onclick=function(e){e.preventDefault();setCat(c)};$("nav").appendChild(a)});
+cats.slice(1).forEach(function(c){var p=PRODUCTS.filter(function(x){return x.cat===c})[0];var b=document.createElement("button");b.className="tile";b.innerHTML="<span></span>"+"<i style='font-style:normal'></i>";b.querySelector("span").textContent=p.icon||"👟";b.querySelector("i").textContent=c;b.onclick=function(){setCat(c)};$("tiles").appendChild(b)});
+function chips(box,arr,key,fmt){arr.forEach(function(v){var b=document.createElement("button");b.className="o";b.textContent=fmt?fmt(v):v;b.onclick=function(){S[key]=(S[key]===v)?(key==="size"?0:""):v;draw()};b.dataset.v=v;box.appendChild(b)})}
+chips($("fb"),brands,"brand");chips($("fs"),sizes,"size");
+if(matchMedia("(max-width:899px)").matches)$("fd").open=false;
+$("clr").onclick=function(){S={q:"",cat:"Todos",brand:"",size:0,min:0,max:0,sort:"0"};$("q").value="";$("pmin").value="";$("pmax").value="";$("sort").value="0";draw()};
+$("sf").onsubmit=function(e){e.preventDefault();S.q=$("q").value.toLowerCase();draw();$("catalogo").scrollIntoView()};
+$("q").oninput=function(){S.q=this.value.toLowerCase();draw()};
+$("sort").onchange=function(){S.sort=this.value;draw()};
+$("pmin").oninput=function(){S.min=+this.value||0;draw()};$("pmax").oninput=function(){S.max=+this.value||0;draw()};
+
+/* cards */
+function card(p){
+  var a=document.createElement("article");a.className="card";a.tabIndex=0;
+  var ph=document.createElement("div");ph.className="ph";
+  ph.appendChild(p.imgs&&p.imgs[0]?mk(p.imgs[0],p.name,"",p.col):sil(p.col));
+  if(p.imgs&&p.imgs[1])ph.appendChild(mk(p.imgs[1],"","b"));
+  if(p.tag){var t=document.createElement("span");t.className="tag";t.textContent=p.tag;ph.appendChild(t)}
+  var b=document.createElement("div");b.className="cb";
+  b.innerHTML="<small></small><h3></h3><div class='old'></div><div class='pc'><span></span><em></em></div><div class='st'></div><div class='gr'>Pago contra entrega</div>";
+  b.querySelector("small").textContent=p.brand;b.querySelector("h3").textContent=p.name;
+  var o=b.querySelector(".old");if(p.old&&p.price&&p.old>p.price){o.textContent=money(p.old);b.querySelector("em").textContent=Math.round((1-p.price/p.old)*100)+"% OFF"}else o.remove();
+  b.querySelector(".pc span").textContent=p.price?money(p.price):"Consultar precio";
+  var st=b.querySelector(".st");if(p.rating){st.textContent="★ "+p.rating+(p.reviews?" ("+p.reviews+")":"")}else st.remove();
+  a.appendChild(ph);a.appendChild(b);a.onclick=function(){openM(p)};a.onkeydown=function(e){if(e.key==="Enter")openM(p)};return a}
+function fill(box,wrap,list){box.innerHTML="";wrap.hidden=!list.length;list.forEach(function(p){box.appendChild(card(p))})}
+fill($("deals"),$("dealsBox"),PRODUCTS.filter(function(p){return p.old&&p.price&&p.old>p.price}));
+fill($("top"),$("topBox"),PRODUCTS.filter(function(p){return p.tag==="Más pedido"}));
+
+function draw(){
+  [].forEach.call($("nav").children,function(a){a.style.fontWeight=a.textContent===S.cat?"700":"500"});
+  [].forEach.call($("fb").children,function(b){b.classList.toggle("on",b.dataset.v===S.brand)});
+  [].forEach.call($("fs").children,function(b){b.classList.toggle("on",+b.dataset.v===S.size)});
+  var l=PRODUCTS.filter(function(p){return(S.cat==="Todos"||p.cat===S.cat)&&(!S.brand||p.brand===S.brand)&&(!S.size||p.sizes.indexOf(S.size)>-1)&&(p.name+" "+p.brand+" "+p.cat).toLowerCase().indexOf(S.q)>-1&&(!p.price||((!S.min||p.price>=S.min)&&(!S.max||p.price<=S.max)))});
+  if(S.sort==="1")l.sort(function(a,b){return a.price-b.price});if(S.sort==="2")l.sort(function(a,b){return b.price-a.price});
+  $("res").textContent=l.length+" resultado"+(l.length===1?"":"s")+(S.cat!=="Todos"?" en "+S.cat:"");
+  var g=$("grid");g.innerHTML="";
+  if(!l.length){g.innerHTML='<div class="empty">No encontramos ese modelo. Escríbenos y lo conseguimos.</div>';return}
+  l.forEach(function(p){g.appendChild(card(p))});
+}
+draw();
+
+REVIEWS.forEach(function(r){var d=document.createElement("div");d.className="rev";d.innerHTML='<div class="st">★★★★★</div><p></p><b></b>';d.querySelector("p").textContent=r.t;d.querySelector("b").textContent=r.n;$("rv").appendChild(d)});
+
+/* modal */
+function openM(p){
+  var c=$("mc");c.innerHTML="";var size=null,imgs=p.imgs||[];
+  var x=document.createElement("button");x.className="xb x";x.textContent="✕";x.setAttribute("aria-label","Cerrar");x.onclick=closeM;
+  var g=document.createElement("div");g.className="mg";var mm=document.createElement("div");mm.className="mm";var th=document.createElement("div");th.className="th";
+  function show(i){mm.innerHTML="";mm.appendChild(imgs[i]?mk(imgs[i],p.name,"",p.col):sil(p.col));[].forEach.call(th.children,function(t,k){t.classList.toggle("on",k===i)})}
+  if(imgs.length>1)imgs.forEach(function(s,i){var bt=document.createElement("button");bt.setAttribute("aria-label","Foto "+(i+1));bt.appendChild(mk(s,"","",p.col));bt.onclick=function(){show(i)};th.appendChild(bt)});
+  g.appendChild(mm);g.appendChild(th);show(0);
+  var inf=document.createElement("div");inf.className="mi";
+  inf.innerHTML="<small style='color:var(--mute)'></small><h3></h3><div class='old'></div><div class='pc'><span></span><em></em></div><p style='color:var(--mute);margin:2px 0'></p><b>Talla (MX)</b><div class='sizes'></div><ul><li>Pago contra entrega</li><li>Te mandamos video del par antes de pagar</li><li>Cambio de talla si el par está sin uso</li></ul>";
+  inf.querySelector("small").textContent=p.brand;inf.querySelector("h3").textContent=p.name;inf.querySelector("p").textContent=p.desc||"";
+  var o=inf.querySelector(".old");if(p.old&&p.price&&p.old>p.price){o.textContent=money(p.old);inf.querySelector("em").textContent=Math.round((1-p.price/p.old)*100)+"% OFF"}else o.remove();
+  inf.querySelector(".pc span").textContent=p.price?money(p.price):"Consultar precio";
+  var sz=inf.querySelector(".sizes");
+  p.sizes.forEach(function(n){var bt=document.createElement("button");bt.className="sz";bt.textContent=n;bt.onclick=function(){size=n;[].forEach.call(sz.children,function(k){k.classList.toggle("on",k===bt)})};sz.appendChild(bt)});
+  var ad=document.createElement("button");ad.className="btn blue w";ad.textContent="Agregar al pedido";
+  ad.onclick=function(){if(!size){sz.style.outline="2px solid var(--blue)";sz.style.borderRadius="8px";ad.textContent="Elige tu talla primero";setTimeout(function(){ad.textContent="Agregar al pedido";sz.style.outline="none"},1400);return}add(p.id,size);closeM();openC(true)};
+  var ask=document.createElement("a");ask.className="btn o w";ask.textContent="Preguntar por este modelo";ask.target="_blank";ask.rel="noopener";ask.href=wa("Hola, me interesa: "+p.name+". ¿Tienes video y tallas disponibles?");
+  inf.appendChild(ad);inf.appendChild(ask);c.appendChild(x);c.appendChild(g);c.appendChild(inf);
+  $("md").classList.add("on");$("ov").classList.add("on");
+}
+function closeM(){$("md").classList.remove("on");if(!$("dr").classList.contains("on"))$("ov").classList.remove("on")}
+
+/* cart */
+function add(id,size){var l=cart.filter(function(c){return c.id===id&&c.size===size})[0];if(l)l.q++;else cart.push({id:id,size:size,q:1});save();render()}
+function render(){
+  var n=0,t=0,box=$("lines");box.innerHTML="";
+  cart.forEach(function(c,i){var p=find(c.id);if(!p)return;n+=c.q;t+=p.price*c.q;
+    var r=document.createElement("div");r.className="ln";
+    r.innerHTML='<div class="i"><b></b><small></small></div><div class="qb"><button aria-label="Quitar uno">−</button><span></span><button aria-label="Agregar uno">+</button></div>';
+    r.querySelector("b").textContent=p.name;r.querySelector("small").textContent="Talla "+c.size+" · "+(p.price?money(p.price):"Consultar precio");r.querySelector("span").textContent=c.q;
+    var bs=r.querySelectorAll("button");bs[0].onclick=function(){c.q--;if(c.q<1)cart.splice(i,1);save();render()};bs[1].onclick=function(){c.q++;save();render()};box.appendChild(r)});
+  if(!n)box.innerHTML='<p style="color:var(--mute);padding:20px 0">Tu pedido está vacío. Elige modelo y talla en el catálogo.</p>';
+  $("count").textContent=n;$("total").textContent=t?money(t):"Por confirmar";
+}
+function openC(v){$("dr").classList.toggle("on",v);if(v)$("ov").classList.add("on");else if(!$("md").classList.contains("on"))$("ov").classList.remove("on")}
+$("openCart").onclick=function(){openC(true)};$("closeCart").onclick=function(){openC(false)};
+$("ov").onclick=function(){closeM();openC(false)};$("md").onclick=function(e){if(e.target===$("md"))closeM()};
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){closeM();openC(false)}});
+$("send").onclick=function(){
+  if(!cart.length){openC(false);$("catalogo").scrollIntoView();return}
+  var ls=cart.map(function(c){var p=find(c.id);return"• "+c.q+"x "+p.name+" (talla "+c.size+")"+(p.price?" - "+money(p.price*c.q):"")});
+  var tot=cart.reduce(function(a,c){return a+find(c.id).price*c.q},0);
+  window.open(wa("Hola, quiero hacer este pedido:\n"+ls.join("\n")+(tot?"\nTotal: "+money(tot):"")+"\nNombre: "+($("name").value||"-")+"\nEntrega en: "+($("addr").value||"-")+"\nPago contra entrega. ¿Me pasas video de los pares?"),"_blank","noopener");
+};
+render();
+</script>
+</body>
+</html>
+  
