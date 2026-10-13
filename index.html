@@ -12,7 +12,6 @@
 <title>Tenis Americanos 23 | Tienda de tenis en Pedregal CDMX</title>
 <meta name="description" content="Catálogo de tenis con entrega en Pedregal y Jardines del Ajusco. Mira el par en video y paga al recibir."> 
 <meta name="theme-color" content="#f2c230">
-<link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter:wght@400;500;600&display=swap">
@@ -28,10 +27,6 @@ img{max-width:100%;display:block}a{color:inherit}button{font-family:inherit}
 .top{background:var(--dark);color:#f6e7b5;text-align:center;font-size:13px;padding:7px 10px;padding-top:calc(7px + env(safe-area-inset-top,0))}
 header{position:sticky;top:0;z-index:30;background:var(--gold);box-shadow:0 1px 4px rgba(0,0,0,.2)}
 .hb{display:flex;align-items:center;gap:12px;padding:10px 0 8px;flex-wrap:wrap}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
-.lg{width:48px;height:48px;display:block;flex:none}.lg svg{width:100%;height:100%;display:block}
-.lt{font:900 18px/1 Archivo,sans-serif;font-stretch:112%}
-.lt small{display:block;font:500 11px Inter;letter-spacing:0;margin-top:2px;opacity:.75}
 .sb{flex:1 1 280px;order:3;display:flex;background:#fff;border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.2);overflow:hidden;min-width:0}
 @media(min-width:800px){.sb{order:0}}
 .sb input{flex:1;border:0;padding:13px 14px;font:inherit;min-width:0;outline:none}
@@ -44,324 +39,22 @@ header{position:sticky;top:0;z-index:30;background:var(--gold);box-shadow:0 1px 
 nav.cats{display:flex;gap:20px;overflow-x:auto;scrollbar-width:none;padding:2px 0 10px;font-size:13.5px;font-weight:500}
 nav.cats::-webkit-scrollbar{display:none}
 nav.cats a{white-space:nowrap;text-decoration:none;opacity:.85}nav.cats a:hover{opacity:1;text-decoration:underline}
-/* banner */
 .bn{position:relative;overflow:hidden;background:var(--dark)}
 .sl{position:relative;overflow:hidden;display:none;min-height:240px;padding:34px 0;color:#fff;background-size:cover;background-position:center}
 @media(min-width:800px){.sl{min-height:340px;padding:60px 0}}
-.sl.on{display:block;animation:fi .5s}
-@keyframes fi{from{opacity:.3}to{opacity:1}}
-.sl h2{font:900 clamp(30px,7vw,64px)/.95 Archivo,sans-serif;font-stretch:115%;margin:0 0 12px;max-width:14ch;letter-spacing:-.02em}
+.sl.on{display:block}
+.sl h2{font:900 clamp(30px,7vw,64px)/.95 Archivo,sans-serif;font-stretch:115%;margin:0 0 12px;max-width:14ch}
 .sl p{margin:0 0 18px;max-width:38ch;font-size:17px;opacity:.9}
-.sl .wrap{position:relative;z-index:2}.ba{display:none;position:absolute;right:3%;top:50%;transform:translateY(-50%) rotate(-7deg);width:min(48%,560px);z-index:1;filter:drop-shadow(0 18px 24px rgba(0,0,0,.45))}.ba .sil{width:100%}@media(min-width:800px){.ba{display:block}}
+.sl .wrap{position:relative;z-index:2}
 .dots{position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:center;gap:8px}
 .dots button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.45);padding:0;cursor:pointer}.dots button.on{background:var(--gold)}
 .btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font:600 15px Inter;padding:12px 22px;border-radius:8px;border:0;cursor:pointer;background:var(--gold);color:var(--dark)}
-.btn.o{background:#fff;color:var(--dark);border:1px solid var(--line)}.btn.ok{background:var(--ok);color:#fff}.btn.blue{background:var(--blue);color:#fff}
-.btn.w{width:100%}
-/* benefits */
+.box{background:var(--card);border-radius:8px;padding:16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.box h3.t{font:800 22px Archivo,sans-serif;margin:0 0 12px}
 .bf{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:-22px 0 22px;position:relative;z-index:2}
 @media(min-width:800px){.bf{grid-template-columns:repeat(4,1fr);margin-top:-34px}}
 .bf div{background:var(--card);border-radius:8px;padding:14px;box-shadow:0 1px 4px rgba(0,0,0,.12)}
 .bf b{display:block;font-size:14px}.bf span{font-size:13px;color:var(--mute)}
-.box{background:var(--card);border-radius:8px;padding:16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
-.box h3.t{font:800 22px Archivo,sans-serif;margin:0 0 12px}
-.row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
-.row .card{flex:0 0 min(210px,56%);scroll-snap-align:start}
 .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 @media(min-width:800px){.tiles{grid-template-columns:repeat(6,1fr)}}
-.tile{background:var(--card);border-radius:8px;padding:16px 8px;text-align:center;cursor:pointer;border:0;font:600 14px Inter;box-shadow:0 1px 3px rgba(0,0,0,.08)}
-.tile:hover{box-shadow:0 3px 10px rgba(0,0,0,.15)}.tile span{display:block;font-size:30px;margin-bottom:4px}
-/* shop layout */
-.shop{display:grid;gap:16px}
-@media(min-width:900px){.shop{grid-template-columns:240px 1fr}}
-aside.fl{background:var(--card);border-radius:8px;padding:16px;align-self:start}
-aside.fl summary{font:800 18px Archivo,sans-serif;cursor:pointer;list-style:none}
-aside.fl h4{margin:16px 0 6px;font-size:14px}
-.opt{display:flex;flex-wrap:wrap;gap:6px}
-.o{padding:6px 12px;border-radius:99px;border:1px solid var(--line);background:#fff;cursor:pointer;font:500 13px Inter}
-.o.on{background:var(--dark);color:#fff;border-color:var(--dark)}
-.pr{display:flex;gap:6px}.pr input{width:100%;padding:9px;border:1px solid var(--line);border-radius:8px;font:inherit}
-.sbar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;color:var(--mute);font-size:14px}
-.sbar select{padding:8px;border-radius:8px;border:1px solid var(--line);font:inherit;background:#fff}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr);gap:14px}}
-@media(min-width:1100px){.grid{grid-template-columns:repeat(4,1fr)}}
-.card{background:var(--card);border-radius:8px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;min-width:0;box-shadow:0 1px 3px rgba(0,0,0,.1);transition:box-shadow .2s}
-.card:hover{box-shadow:0 6px 18px rgba(0,0,0,.18)}
-.ph{position:relative;aspect-ratio:1;background:radial-gradient(circle at 50% 45%,#fff,#e9e9e9);display:grid;place-items:center;overflow:hidden;border-bottom:1px solid var(--line)}
-.ph img{width:100%;height:100%;object-fit:cover}
-.ph img.b{position:absolute;inset:0;opacity:0;transition:opacity .25s}.card:hover .ph img.b{opacity:1}
-.sil{width:86%}.sil svg{width:100%;height:auto;display:block}
-.tag{position:absolute;top:8px;left:8px;background:var(--blue);color:#fff;font:700 11px Inter;padding:3px 8px;border-radius:4px;z-index:2}
-.cb{padding:12px;display:flex;flex-direction:column;gap:3px;flex:1}
-.cb small{color:var(--mute);font-size:12px}
-.cb h3{margin:0;font:600 15px/1.25 Inter;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-.old{color:var(--mute);text-decoration:line-through;font-size:13px;margin-top:4px}
-.pc{font:600 22px Inter;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-.pc em{font:600 13px Inter;color:var(--ok);font-style:normal}
-.gr{color:var(--ok);font-size:13px;font-weight:600}
-.st{color:#e8a500;font-size:13px}
-.empty{grid-column:1/-1;text-align:center;color:var(--mute);padding:50px 0;background:var(--card);border-radius:8px}
-/* info */
-.steps{display:grid;gap:12px}@media(min-width:800px){.steps{grid-template-columns:repeat(3,1fr)}}
-.steps div{padding:6px}.steps b{display:block;font:800 18px Archivo,sans-serif}.steps p{margin:2px 0 0;color:var(--mute)}
-.rv{display:grid;gap:12px}@media(min-width:800px){.rv{grid-template-columns:repeat(3,1fr)}}
-.rev{border:1px solid var(--line);border-radius:8px;padding:14px}.rev p{margin:6px 0;color:var(--mute)}
-details.q{border-bottom:1px solid var(--line);padding:12px 0}
-details.q summary{cursor:pointer;font-weight:600}details.q p{margin:8px 0 0;color:var(--mute)}
-footer{background:var(--dark);color:#bfb8a6;padding:34px 0 100px;margin-top:20px;font-size:14px}
-.fc{display:grid;gap:22px}@media(min-width:800px){.fc{grid-template-columns:2fr 1fr 1fr}}
-footer h4{color:#fff;margin:0 0 8px}footer a{display:block;color:#bfb8a6;text-decoration:none;margin:5px 0}footer a:hover{color:var(--gold)}
-.fab{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0));z-index:25;background:var(--ok);color:#fff;font:700 15px Inter;text-decoration:none;padding:13px 18px;border-radius:99px;box-shadow:0 6px 20px rgba(0,0,0,.35)}
-/* overlay drawer modal */
-.ov{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .2s;z-index:40}.ov.on{opacity:1;pointer-events:auto}
-.dr{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:#fff;z-index:41;transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0)}.dr.on{transform:none}
-.dh{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line)}.dh b{font:800 20px Archivo,sans-serif}
-.xb{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:16px}
-.dl{flex:1;overflow-y:auto;padding:4px 16px}
-.ln{display:flex;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}.ln .i{flex:1;min-width:0}.ln b{display:block;font-size:14px}.ln small{color:var(--mute)}
-.qb{display:flex;align-items:center;gap:8px}.qb button{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer}
-.df{padding:14px 16px calc(14px + env(safe-area-inset-bottom,0));border-top:1px solid var(--line);display:grid;gap:10px}
-.df input{padding:12px;border:1px solid var(--line);border-radius:8px;font:inherit;width:100%}
-.tot{display:flex;justify-content:space-between;font:800 19px Archivo,sans-serif}
-.md{position:fixed;inset:0;z-index:42;display:none;align-items:flex-end;justify-content:center}.md.on{display:flex}
-.mc{background:#fff;border-radius:16px 16px 0 0;width:100%;max-width:900px;max-height:94vh;overflow-y:auto;display:grid;position:relative}
-@media(min-width:800px){.md{align-items:center}.mc{border-radius:12px;grid-template-columns:1.1fr 1fr}}
-.mg{padding:14px}.mm{aspect-ratio:1;border-radius:8px;overflow:hidden;background:#f6f6f6;display:grid;place-items:center}.mm img{width:100%;height:100%;object-fit:cover}
-.th{display:flex;gap:8px;margin-top:8px;overflow-x:auto}.th button{flex:none;width:58px;height:58px;border-radius:8px;border:2px solid var(--line);padding:0;overflow:hidden;background:#f6f6f6;cursor:pointer}.th button.on{border-color:var(--blue)}.th img{width:100%;height:100%;object-fit:cover}
-.mi{padding:18px;display:flex;flex-direction:column;gap:8px}.mi h3{margin:0;font:800 24px/1.1 Archivo,sans-serif}
-.mi ul{margin:4px 0;padding-left:18px;color:var(--mute)}
-.sizes{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 8px}
-.sz{min-width:48px;padding:9px;border-radius:8px;border:1px solid var(--line);background:#fff;font:600 14px Inter;cursor:pointer}.sz.on{border-color:var(--blue);color:var(--blue);box-shadow:inset 0 0 0 1px var(--blue)}
-.x{position:absolute;top:8px;right:8px;z-index:3;background:#fff}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
-</style>
-</head>
-<body>
-<div class="top">Pago contra entrega · Video del par antes de pagar · Entregas en Pedregal y Jardines del Ajusco</div>
-<header><div class="wrap">
-<div class="hb">
-<a class="logo" href="#"><span class="lg"><svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tenis Americanos 23"><defs><linearGradient id="gG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7de8c"/><stop offset=".5" stop-color="#e0b43f"/><stop offset="1" stop-color="#a97f1c"/></linearGradient><path id="gA" d="M18 60a42 42 0 0 1 84 0"/></defs><circle cx="60" cy="60" r="58" fill="#14110d"/><circle cx="60" cy="60" r="55" fill="none" stroke="url(#gG)" stroke-width="2.5"/><circle cx="60" cy="60" r="35" fill="none" stroke="url(#gG)" stroke-width=".8" opacity=".6"/><text font-family="Archivo,Arial Black,Impact,sans-serif" font-weight="800" font-size="9.5" letter-spacing="2.2" fill="url(#gG)"><textPath href="#gA" startOffset="50%" text-anchor="middle">TENIS AMERICANOS</textPath></text><text x="60" y="73" text-anchor="middle" font-family="Archivo,Arial Black,Impact,sans-serif" font-weight="900" font-size="44" fill="url(#gG)">23</text><path d="M38 86c0-4 4-4 8-6l6-4c2-1 4 0 5 2 3 3 8 3 14 5 5 1 7 3 7 5v2H38z" fill="url(#gG)"/><text x="60" y="104" text-anchor="middle" font-family="Archivo,Arial Black,sans-serif" font-weight="700" font-size="7" letter-spacing="2" fill="#a97f1c">PEDREGAL</text></svg></span><div class="lt">Tenis Americanos<small>Pedregal, CDMX</small></div></a>
-<form class="sb" id="sf" role="search"><input id="q" type="search" placeholder="Buscar modelos, marcas y más..." aria-label="Buscar"><button aria-label="Buscar">🔍</button></form>
-<div class="loc"><small>Entregamos en</small><b>Pedregal y alrededores</b></div>
-<button class="cartb" id="openCart">🛒 Pedido<i id="count">0</i></button>
-</div>
-<nav class="cats" id="nav"></nav>
-</div></header>
-
-<div class="bn"><div id="slides"></div><div class="dots" id="dots"></div></div>
-
-<main class="wrap">
-<div class="bf">
-<div><b>Pago contra entrega</b><span>Sin anticipos</span></div>
-<div><b>Video del par</b><span>Antes de pagar</span></div>
-<div><b>Entrega rápida</b><span>Pedregal y alrededores</span></div>
-<div><b>Cambio de talla</b><span>Si el par está sin uso</span></div>
-</div>
-
-<div class="tiles" id="tiles" style="margin-bottom:16px"></div>
-
-<div class="box" id="dealsBox" hidden><h3 class="t">Ofertas</h3><div class="row" id="deals"></div></div>
-<div class="box" id="topBox" hidden><h3 class="t">Más pedidos</h3><div class="row" id="top"></div></div>
-
-<div class="shop" id="catalogo">
-<aside class="fl"><details id="fd" open><summary>Filtros</summary>
-<h4>Marca</h4><div class="opt" id="fb"></div>
-<h4>Talla (MX)</h4><div class="opt" id="fs"></div>
-<h4>Precio</h4><div class="pr"><input id="pmin" type="number" min="0" placeholder="Mín"><input id="pmax" type="number" min="0" placeholder="Máx"></div>
-<p style="margin:14px 0 0"><button class="o" id="clr">Limpiar filtros</button></p>
-</details></aside>
-<section>
-<div class="sbar"><span id="res"></span><select id="sort" aria-label="Ordenar"><option value="0">Más relevantes</option><option value="1">Menor precio</option><option value="2">Mayor precio</option></select></div>
-<div class="grid" id="grid"></div>
-</section>
-</div>
-
-<div class="box" style="margin-top:18px" id="como"><h3 class="t">Cómo comprar</h3>
-<div class="steps"><div><b>1. Elige tu par</b><p>Escoge modelo y talla y agrégalo a tu pedido.</p></div><div><b>2. Confirma por WhatsApp</b><p>Te llega el pedido listo y te mandamos video del par.</p></div><div><b>3. Paga al recibir</b><p>Revisas el par en la puerta y pagas. Sin anticipos.</p></div></div></div>
-
-<div class="box" id="clientes"><h3 class="t">Lo que dicen nuestros clientes</h3><div class="rv" id="rv"></div></div>
-
-<div class="box" id="faq"><h3 class="t">Preguntas frecuentes</h3>
-<details class="q"><summary>¿Cómo pago?</summary><p>Contra entrega, como acuerdes por WhatsApp. No pedimos anticipos.</p></details>
-<details class="q"><summary>¿Los tenis son originales?</summary><p>Somos una tienda independiente, no distribuidor oficial de ninguna marca. Pregunta por WhatsApp la calidad de cada modelo y te pasamos video antes de pagar.</p></details>
-<details class="q"><summary>¿Puedo cambiar la talla?</summary><p>Sí, si el par está sin uso y avisas el mismo día de la entrega.</p></details>
-<details class="q"><summary>¿Cuánto tarda la entrega?</summary><p>Normalmente el mismo día o al siguiente, según tu zona.</p></details>
-<details class="q"><summary>¿Entregan fuera de Pedregal?</summary><p>Pregunta por WhatsApp. Depende de la zona.</p></details>
-</div>
-</main>
-
-<footer><div class="wrap fc">
-<div><b class="d" style="color:#fff;font-size:20px">Tenis Americanos 23</b><p>Tienda independiente en Pedregal, CDMX. No somos distribuidor oficial de ninguna marca. Los nombres de marca se usan solo para identificar el estilo del modelo.</p></div>
-<div><h4>Compra</h4><a href="#catalogo">Catálogo</a><a href="#como">Cómo comprar</a><a href="#faq">Preguntas</a></div>
-<div><h4>Contacto</h4><a id="fWa" href="#" target="_blank" rel="noopener">WhatsApp</a><a id="fIg" href="#" target="_blank" rel="noopener">Instagram</a><a id="fX" href="#" target="_blank" rel="noopener">X</a></div>
-</div></footer>
-
-<a class="fab" id="fab" href="#" target="_blank" rel="noopener">WhatsApp</a>
-<div class="ov" id="ov"></div>
-<aside class="dr" id="dr" aria-label="Pedido"><div class="dh"><b>Tu pedido</b><button class="xb" id="closeCart" aria-label="Cerrar">✕</button></div><div class="dl" id="lines"></div>
-<div class="df"><div class="tot"><span>Total</span><span id="total">$0</span></div><input id="name" placeholder="Tu nombre" autocomplete="name"><input id="addr" placeholder="Colonia y calle de entrega" autocomplete="street-address"><button class="btn ok w" id="send">Enviar pedido por WhatsApp</button></div></aside>
-<div class="md" id="md" role="dialog" aria-modal="true"><div class="mc" id="mc"></div></div>
-
-<script>
-/* ================= EDITA AQUÍ ================= */
-var CFG={wa:"525636364852",ig:"https://instagram.com/Giovanni_mg23",x:"https://x.com/GiovannElmvp"};
-/* Banners: img opcional (foto en carpeta img/). Sin foto se ve el fondo de color. */
-var BANNERS=[
- {t:"Tenis americanos a tu puerta",s:"Ves el par en video y pagas al recibirlo.",cta:"Ver catálogo",href:"#catalogo",img:"img/banner1.jpg",bg:"#2a1f0a",col:["#fafafa","#f2c230","#fafafa"]},
- {t:"Nuevos modelos cada semana",s:"Escríbenos y te mandamos lo más reciente.",cta:"Pedir por WhatsApp",href:"wa",img:"img/banner2.jpg",bg:"#10233a",col:["#2563eb","#ffffff","#fafafa"]},
- {t:"Pago contra entrega",s:"Sin anticipos. Revisas el par en la puerta.",cta:"Cómo comprar",href:"#como",img:"img/banner3.jpg",bg:"#0f2d1c",col:["#dc2626","#111111","#fafafa"]}
-];
-/* Productos: imgs = fotos en carpeta img/. old = precio anterior (opcional, muestra % de descuento).
-   price:0 = "Consultar precio". rating/reviews opcionales: solo ponlos si son reales. */
-/* Fotos: img/m01-1.jpg, m01-2.jpg, m01-3.jpg (modelo 1), m02-1.jpg... Mientras no subas la foto se ve una ilustración del color. */
-function im(n){return [1,2,3].map(function(i){return "img/m"+(n<10?"0":"")+n+"-"+i+".jpg"})}
-var D="Modelo disponible en varias tallas. Pregunta por colores y video del par.";
-var Z=[25,26,27,28,29];
-/* PRECIOS DE EJEMPLO: cámbialos por los tuyos. */
-var PRODUCTS=[
- {id:1,name:"Air Force 1 Blanco",brand:"Nike",cat:"Clásicos",icon:"👟",price:1299,old:1599,sizes:Z,imgs:im(1),col:["#fafafa","#d4d4d4","#f1f1f1"],tag:"Más pedido",desc:D},
- {id:2,name:"Clásico Blanco/Verde",brand:"Adidas",cat:"Clásicos",icon:"👟",price:1199,old:0,sizes:Z,imgs:im(2),col:["#fafafa","#16a34a","#f1f1f1"],tag:"",desc:D},
- {id:3,name:"Clásico Negro/Dorado",brand:"Nike",cat:"Clásicos",icon:"👟",price:1399,old:1699,sizes:Z,imgs:im(3),col:["#1a1a1a","#d4a843","#f2f2f2"],tag:"",desc:D},
- {id:4,name:"Clásico Crema",brand:"Puma",cat:"Clásicos",icon:"👟",price:1099,old:0,sizes:Z,imgs:im(4),col:["#efe3c8","#b08a4a","#ffffff"],tag:"Nuevo",desc:D},
- {id:5,name:"Basket Alta Rojo/Negro",brand:"Jordan",cat:"Basket",icon:"🏀",price:1899,old:2299,sizes:Z,imgs:im(5),col:["#c1121f","#111111","#f2f2f2"],tag:"Más pedido",desc:D},
- {id:6,name:"Basket Alta Azul",brand:"Jordan",cat:"Basket",icon:"🏀",price:1799,old:0,sizes:Z,imgs:im(6),col:["#1d4ed8","#ffffff","#ffffff"],tag:"",desc:D},
- {id:7,name:"Basket Alta Negro/Oro",brand:"Jordan",cat:"Basket",icon:"🏀",price:1999,old:2399,sizes:Z,imgs:im(7),col:["#111111","#f2c230","#222222"],tag:"Nuevo",desc:D},
- {id:8,name:"Basket Alta Morado",brand:"Nike",cat:"Basket",icon:"🏀",price:1699,old:0,sizes:Z,imgs:im(8),col:["#6d28d9","#f2c230","#ffffff"],tag:"",desc:D},
- {id:9,name:"Runner Gris/Naranja",brand:"New Balance",cat:"Running",icon:"🏃",price:1499,old:1799,sizes:Z,imgs:im(9),col:["#6b7280","#f97316","#ffffff"],tag:"Más pedido",desc:D},
- {id:10,name:"Runner Negro",brand:"Nike",cat:"Running",icon:"🏃",price:1599,old:0,sizes:Z,imgs:im(10),col:["#111111","#555555","#ffffff"],tag:"",desc:D},
- {id:11,name:"Runner Azul/Neón",brand:"Adidas",cat:"Running",icon:"🏃",price:1699,old:1999,sizes:Z,imgs:im(11),col:["#1e3a8a","#a3e635","#ffffff"],tag:"Nuevo",desc:D},
- {id:12,name:"Runner Blanco/Rosa",brand:"Puma",cat:"Running",icon:"🏃",price:1399,old:0,sizes:Z,imgs:im(12),col:["#ffffff","#ec4899","#ffffff"],tag:"",desc:D},
- {id:13,name:"Casual Beige",brand:"New Balance",cat:"Casual",icon:"👞",price:1299,old:0,sizes:Z,imgs:im(13),col:["#d6c3a1","#8b6b3d","#ffffff"],tag:"",desc:D},
- {id:14,name:"Casual Verde Olivo",brand:"Adidas",cat:"Casual",icon:"👞",price:1249,old:1499,sizes:Z,imgs:im(14),col:["#556b2f","#e5d9b6","#f2f2f2"],tag:"",desc:D},
- {id:15,name:"Casual Negro Total",brand:"Puma",cat:"Casual",icon:"👞",price:1149,old:0,sizes:Z,imgs:im(15),col:["#161616","#2f2f2f","#161616"],tag:"",desc:D},
- {id:16,name:"Casual Rojo",brand:"Nike",cat:"Casual",icon:"👞",price:1349,old:0,sizes:Z,imgs:im(16),col:["#dc2626","#ffffff","#ffffff"],tag:"",desc:D}
-];
-var REVIEWS=[{n:"Cliente 1",t:"Pega aquí un comentario real de un cliente."},{n:"Cliente 2",t:"Pega aquí un comentario real de un cliente."},{n:"Cliente 3",t:"Pega aquí un comentario real de un cliente."}];
-/* ============================================== */
-
-var ART=function(c){c=c||["#fafafa","#d9d9d9","#f4f4f4"];return '<svg viewBox="0 0 240 150" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="1.4" stroke-linejoin="round"><ellipse cx="122" cy="132" rx="100" ry="7" fill="rgba(0,0,0,.14)" stroke="none"/><path d="M18 112c0-8 8-10 16-10h172c16 0 22 6 20 14-2 8-12 10-22 10H40c-14 0-22-4-22-14z" fill="'+c[2]+'"/><path d="M26 102c-2-18 8-26 24-32l28-12c6-8 14-18 26-20l8 14c8 12 26 16 48 20 30 6 58 12 62 28l2 4H26z" fill="'+c[0]+'"/><path d="M170 74c26 4 46 12 52 26l2 4h-48c0-12-2-22-6-30z" fill="'+c[1]+'"/><path d="M26 102c-2-14 2-22 12-28l14-4 6 32z" fill="'+c[1]+'"/><path d="M78 58c6-8 14-18 26-20l8 14-16 8z" fill="rgba(0,0,0,.3)"/><path d="M62 98c22-6 44-18 62-28l8 4c-20 14-40 24-62 30z" fill="'+c[1]+'"/><path d="M110 50l14 8M118 44l14 8M126 40l12 8" stroke="rgba(255,255,255,.85)" stroke-width="2.2" stroke-linecap="round"/><path d="M30 112h190" stroke="rgba(0,0,0,.12)"/></svg>'};
-var $=function(i){return document.getElementById(i)};
-var wa=function(t){return "https://wa.me/"+CFG.wa+(t?"?text="+encodeURIComponent(t):"")};
-var money=function(n){return "$"+n.toLocaleString("es-MX")};
-function sil(c){var d=document.createElement("div");d.className="sil";d.innerHTML=ART(c);return d}
-function mk(src,alt,cls,c){var im=document.createElement("img");if(cls)im.className=cls;im.alt=alt||"";im.loading="lazy";im.onerror=function(){if(!im.parentNode)return;if(cls==="b")im.remove();else im.replaceWith(sil(c))};im.src=src;return im}
-var cart=[];try{cart=JSON.parse(localStorage.getItem("cart23")||"[]")}catch(e){}
-function save(){try{localStorage.setItem("cart23",JSON.stringify(cart))}catch(e){}}
-function find(id){return PRODUCTS.filter(function(p){return p.id===id})[0]}
-var S={q:"",cat:"Todos",brand:"",size:0,min:0,max:0,sort:"0"};
-
-["fWa","fab"].forEach(function(i){$(i).href=wa("Hola, quiero ver el catálogo")});$("fIg").href=CFG.ig;$("fX").href=CFG.x;
-
-/* banners */
-var cur=0,tm;
-BANNERS.forEach(function(b,i){
-  var s=document.createElement("div");s.className="sl"+(i?"":" on");
-  s.style.backgroundColor=b.bg;s.style.backgroundImage="linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.15)),url("+b.img+")";
-  s.innerHTML='<div class="wrap"><h2></h2><p></p><a class="btn"></a></div><div class="ba"></div>';s.querySelector(".ba").appendChild(sil(b.col));
-  s.querySelector("h2").textContent=b.t;s.querySelector("p").textContent=b.s;
-  var a=s.querySelector("a");a.textContent=b.cta;a.href=b.href==="wa"?wa("Hola, quiero ver lo más nuevo"):b.href;if(b.href==="wa"){a.target="_blank";a.rel="noopener"}
-  $("slides").appendChild(s);
-  var d=document.createElement("button");d.className=i?"":"on";d.setAttribute("aria-label","Banner "+(i+1));d.onclick=function(){go(i);auto()};$("dots").appendChild(d);
-});
-function go(i){cur=i;[].forEach.call($("slides").children,function(s,k){s.classList.toggle("on",k===i)});[].forEach.call($("dots").children,function(d,k){d.classList.toggle("on",k===i)})}
-function auto(){clearInterval(tm);if(BANNERS.length>1&&!matchMedia("(prefers-reduced-motion:reduce)").matches)tm=setInterval(function(){go((cur+1)%BANNERS.length)},5500)}auto();
-
-/* nav, tiles, filters */
-var cats=["Todos"];PRODUCTS.forEach(function(p){if(cats.indexOf(p.cat)<0)cats.push(p.cat)});
-var brands=[],sizes=[];PRODUCTS.forEach(function(p){if(brands.indexOf(p.brand)<0)brands.push(p.brand);p.sizes.forEach(function(z){if(sizes.indexOf(z)<0)sizes.push(z)})});sizes.sort();
-function setCat(c){S.cat=c;draw();$("catalogo").scrollIntoView()}
-cats.forEach(function(c){var a=document.createElement("a");a.href="#catalogo";a.textContent=c;a.onclick=function(e){e.preventDefault();setCat(c)};$("nav").appendChild(a)});
-cats.slice(1).forEach(function(c){var p=PRODUCTS.filter(function(x){return x.cat===c})[0];var b=document.createElement("button");b.className="tile";b.innerHTML="<span></span>"+"<i style='font-style:normal'></i>";b.querySelector("span").textContent=p.icon||"👟";b.querySelector("i").textContent=c;b.onclick=function(){setCat(c)};$("tiles").appendChild(b)});
-function chips(box,arr,key,fmt){arr.forEach(function(v){var b=document.createElement("button");b.className="o";b.textContent=fmt?fmt(v):v;b.onclick=function(){S[key]=(S[key]===v)?(key==="size"?0:""):v;draw()};b.dataset.v=v;box.appendChild(b)})}
-chips($("fb"),brands,"brand");chips($("fs"),sizes,"size");
-if(matchMedia("(max-width:899px)").matches)$("fd").open=false;
-$("clr").onclick=function(){S={q:"",cat:"Todos",brand:"",size:0,min:0,max:0,sort:"0"};$("q").value="";$("pmin").value="";$("pmax").value="";$("sort").value="0";draw()};
-$("sf").onsubmit=function(e){e.preventDefault();S.q=$("q").value.toLowerCase();draw();$("catalogo").scrollIntoView()};
-$("q").oninput=function(){S.q=this.value.toLowerCase();draw()};
-$("sort").onchange=function(){S.sort=this.value;draw()};
-$("pmin").oninput=function(){S.min=+this.value||0;draw()};$("pmax").oninput=function(){S.max=+this.value||0;draw()};
-
-/* cards */
-function card(p){
-  var a=document.createElement("article");a.className="card";a.tabIndex=0;
-  var ph=document.createElement("div");ph.className="ph";
-  ph.appendChild(p.imgs&&p.imgs[0]?mk(p.imgs[0],p.name,"",p.col):sil(p.col));
-  if(p.imgs&&p.imgs[1])ph.appendChild(mk(p.imgs[1],"","b"));
-  if(p.tag){var t=document.createElement("span");t.className="tag";t.textContent=p.tag;ph.appendChild(t)}
-  var b=document.createElement("div");b.className="cb";
-  b.innerHTML="<small></small><h3></h3><div class='old'></div><div class='pc'><span></span><em></em></div><div class='st'></div><div class='gr'>Pago contra entrega</div>";
-  b.querySelector("small").textContent=p.brand;b.querySelector("h3").textContent=p.name;
-  var o=b.querySelector(".old");if(p.old&&p.price&&p.old>p.price){o.textContent=money(p.old);b.querySelector("em").textContent=Math.round((1-p.price/p.old)*100)+"% OFF"}else o.remove();
-  b.querySelector(".pc span").textContent=p.price?money(p.price):"Consultar precio";
-  var st=b.querySelector(".st");if(p.rating){st.textContent="★ "+p.rating+(p.reviews?" ("+p.reviews+")":"")}else st.remove();
-  a.appendChild(ph);a.appendChild(b);a.onclick=function(){openM(p)};a.onkeydown=function(e){if(e.key==="Enter")openM(p)};return a}
-function fill(box,wrap,list){box.innerHTML="";wrap.hidden=!list.length;list.forEach(function(p){box.appendChild(card(p))})}
-fill($("deals"),$("dealsBox"),PRODUCTS.filter(function(p){return p.old&&p.price&&p.old>p.price}));
-fill($("top"),$("topBox"),PRODUCTS.filter(function(p){return p.tag==="Más pedido"}));
-
-function draw(){
-  [].forEach.call($("nav").children,function(a){a.style.fontWeight=a.textContent===S.cat?"700":"500"});
-  [].forEach.call($("fb").children,function(b){b.classList.toggle("on",b.dataset.v===S.brand)});
-  [].forEach.call($("fs").children,function(b){b.classList.toggle("on",+b.dataset.v===S.size)});
-  var l=PRODUCTS.filter(function(p){return(S.cat==="Todos"||p.cat===S.cat)&&(!S.brand||p.brand===S.brand)&&(!S.size||p.sizes.indexOf(S.size)>-1)&&(p.name+" "+p.brand+" "+p.cat).toLowerCase().indexOf(S.q)>-1&&(!p.price||((!S.min||p.price>=S.min)&&(!S.max||p.price<=S.max)))});
-  if(S.sort==="1")l.sort(function(a,b){return a.price-b.price});if(S.sort==="2")l.sort(function(a,b){return b.price-a.price});
-  $("res").textContent=l.length+" resultado"+(l.length===1?"":"s")+(S.cat!=="Todos"?" en "+S.cat:"");
-  var g=$("grid");g.innerHTML="";
-  if(!l.length){g.innerHTML='<div class="empty">No encontramos ese modelo. Escríbenos y lo conseguimos.</div>';return}
-  l.forEach(function(p){g.appendChild(card(p))});
-}
-draw();
-
-REVIEWS.forEach(function(r){var d=document.createElement("div");d.className="rev";d.innerHTML='<div class="st">★★★★★</div><p></p><b></b>';d.querySelector("p").textContent=r.t;d.querySelector("b").textContent=r.n;$("rv").appendChild(d)});
-
-/* modal */
-function openM(p){
-  var c=$("mc");c.innerHTML="";var size=null,imgs=p.imgs||[];
-  var x=document.createElement("button");x.className="xb x";x.textContent="✕";x.setAttribute("aria-label","Cerrar");x.onclick=closeM;
-  var g=document.createElement("div");g.className="mg";var mm=document.createElement("div");mm.className="mm";var th=document.createElement("div");th.className="th";
-  function show(i){mm.innerHTML="";mm.appendChild(imgs[i]?mk(imgs[i],p.name,"",p.col):sil(p.col));[].forEach.call(th.children,function(t,k){t.classList.toggle("on",k===i)})}
-  if(imgs.length>1)imgs.forEach(function(s,i){var bt=document.createElement("button");bt.setAttribute("aria-label","Foto "+(i+1));bt.appendChild(mk(s,"","",p.col));bt.onclick=function(){show(i)};th.appendChild(bt)});
-  g.appendChild(mm);g.appendChild(th);show(0);
-  var inf=document.createElement("div");inf.className="mi";
-  inf.innerHTML="<small style='color:var(--mute)'></small><h3></h3><div class='old'></div><div class='pc'><span></span><em></em></div><p style='color:var(--mute);margin:2px 0'></p><b>Talla (MX)</b><div class='sizes'></div><ul><li>Pago contra entrega</li><li>Te mandamos video del par antes de pagar</li><li>Cambio de talla si el par está sin uso</li></ul>";
-  inf.querySelector("small").textContent=p.brand;inf.querySelector("h3").textContent=p.name;inf.querySelector("p").textContent=p.desc||"";
-  var o=inf.querySelector(".old");if(p.old&&p.price&&p.old>p.price){o.textContent=money(p.old);inf.querySelector("em").textContent=Math.round((1-p.price/p.old)*100)+"% OFF"}else o.remove();
-  inf.querySelector(".pc span").textContent=p.price?money(p.price):"Consultar precio";
-  var sz=inf.querySelector(".sizes");
-  p.sizes.forEach(function(n){var bt=document.createElement("button");bt.className="sz";bt.textContent=n;bt.onclick=function(){size=n;[].forEach.call(sz.children,function(k){k.classList.toggle("on",k===bt)})};sz.appendChild(bt)});
-  var ad=document.createElement("button");ad.className="btn blue w";ad.textContent="Agregar al pedido";
-  ad.onclick=function(){if(!size){sz.style.outline="2px solid var(--blue)";sz.style.borderRadius="8px";ad.textContent="Elige tu talla primero";setTimeout(function(){ad.textContent="Agregar al pedido";sz.style.outline="none"},1400);return}add(p.id,size);closeM();openC(true)};
-  var ask=document.createElement("a");ask.className="btn o w";ask.textContent="Preguntar por este modelo";ask.target="_blank";ask.rel="noopener";ask.href=wa("Hola, me interesa: "+p.name+". ¿Tienes video y tallas disponibles?");
-  inf.appendChild(ad);inf.appendChild(ask);c.appendChild(x);c.appendChild(g);c.appendChild(inf);
-  $("md").classList.add("on");$("ov").classList.add("on");
-}
-function closeM(){$("md").classList.remove("on");if(!$("dr").classList.contains("on"))$("ov").classList.remove("on")}
-
-/* cart */
-function add(id,size){var l=cart.filter(function(c){return c.id===id&&c.size===size})[0];if(l)l.q++;else cart.push({id:id,size:size,q:1});save();render()}
-function render(){
-  var n=0,t=0,box=$("lines");box.innerHTML="";
-  cart.forEach(function(c,i){var p=find(c.id);if(!p)return;n+=c.q;t+=p.price*c.q;
-    var r=document.createElement("div");r.className="ln";
-    r.innerHTML='<div class="i"><b></b><small></small></div><div class="qb"><button aria-label="Quitar uno">−</button><span></span><button aria-label="Agregar uno">+</button></div>';
-    r.querySelector("b").textContent=p.name;r.querySelector("small").textContent="Talla "+c.size+" · "+(p.price?money(p.price):"Consultar precio");r.querySelector("span").textContent=c.q;
-    var bs=r.querySelectorAll("button");bs[0].onclick=function(){c.q--;if(c.q<1)cart.splice(i,1);save();render()};bs[1].onclick=function(){c.q++;save();render()};box.appendChild(r)});
-  if(!n)box.innerHTML='<p style="color:var(--mute);padding:20px 0">Tu pedido está vacío. Elige modelo y talla en el catálogo.</p>';
-  $("count").textContent=n;$("total").textContent=t?money(t):"Por confirmar";
-}
-function openC(v){$("dr").classList.toggle("on",v);if(v)$("ov").classList.add("on");else if(!$("md").classList.contains("on"))$("ov").classList.remove("on")}
-$("openCart").onclick=function(){openC(true)};$("closeCart").onclick=function(){openC(false)};
-$("ov").onclick=function(){closeM();openC(false)};$("md").onclick=function(e){if(e.target===$("md"))closeM()};
-document.addEventListener("keydown",function(e){if(e.key==="Escape"){closeM();openC(false)}});
-$("send").onclick=function(){
-  if(!cart.length){openC(false);$("catalogo").scrollIntoView();return}
-  var ls=cart.map(function(c){var p=find(c.id);return"• "+c.q+"x "+p.name+" (talla "+c.size+")"+(p.price?" - "+money(p.price*c.q):"")});
-  var tot=cart.reduce(function(a,c){return a+find(c.id).price*c.q},0);
-  window.open(wa("Hola, quiero hacer este pedido:\n"+ls.join("\n")+(tot?"\nTotal: "+money(tot):"")+"\nNombre: "+($("name").value||"-")+"\nEntrega en: "+($("addr").value||"-")+"\nPago contra entrega. ¿Me pasas video de los pares?"),"_blank","noopener");
-};
-render();
-</script>
-</body>
-</html>
-  
+.tile{background:var(--card);border-radius:8px;padding:16px 8px;text-align:center;cursor:pointer;border:0;font:600 14px Inter
