@@ -234,8 +234,7 @@ legend{font-weight:600;margin-bottom:.4rem}
       <div class="mas"><button class="btn ghost big" id="mas" type="button" hidden>Ver más modelos</button></div>
     </section>
   </div>
-
-  <section class="box" id="recientes" hidden><h2>Vistos recientemente</h2><div class="recrow" id="recList"></div></section>
+<section class="box" id="recientes" hidden><h2>Vistos recientemente</h2><div class="recrow" id="recList"></div></section>
 
   <section class="box" id="como"><h2>Cómo comprar</h2>
     <ol class="pasos">
@@ -248,4 +247,244 @@ legend{font-weight:600;margin-bottom:.4rem}
     <details class="q"><summary>¿Cómo pago?</summary><p>Transferencia, OXXO, Mercado Pago o contraentrega (solo Atizapán y Nicolás Romero). Los datos de pago te los mandamos por WhatsApp. Nunca pedimos datos de tarjeta por el chat.</p></details>
     <details class="q"><summary>¿Los tenis son originales?</summary><p>Somos una tienda independiente y no distribuidor oficial de ninguna marca. Pregunta por WhatsApp sobre cada modelo y te mandamos fotos o video antes de pagar.</p></details>
     <details class="q"><summary>¿Puedo cambiar la talla?</summary><p>Sí, hay cambio de talla en 24 h en punto medio.</p></details>
-    <details class="q"><summary>¿Cuánto tarda la entrega?</summary><p>En Atizapán y Nicolás Romero entregamos en mano. A otros estados enviamos por Estafeta o FedEx con guía de rastreo
+    <details class="q"><summary>¿Cuánto tarda la entrega?</summary><p>En Atizapán y Nicolás Romero entregamos en mano. A otros estados enviamos por Estafeta o FedEx con guía de rastreo, y el costo se cotiza por WhatsApp.</p></details>
+  </section>
+</main>
+
+<footer><div class="greca" aria-hidden="true"></div><div class="wrap fc">
+  <div><h3>StylesAmerican</h3><p>Tienda independiente en Atizapán y Nicolás Romero, Estado de México. No somos distribuidor oficial de ninguna marca. Los nombres de marca se usan solo para identificar el estilo del modelo.</p></div>
+  <div><h3>Compra</h3><a href="#catalogo">Catálogo</a><a href="#como">Cómo comprar</a><a href="#faq">Preguntas</a></div>
+  <div><h3>Contacto</h3><a id="waFoot" href="#" target="_blank" rel="noopener">WhatsApp 56 3636 4852</a><p>© <span id="year"></span> StylesAmerican</p></div>
+</div></footer>
+
+<a class="btn wa fab" id="waFlot" href="#" target="_blank" rel="noopener">WhatsApp</a>
+<button class="up btn ghost" id="up" type="button" hidden aria-label="Subir">↑</button>
+<div id="toast" role="status" aria-live="polite"></div>
+<dialog id="detalle" aria-labelledby="d-title">
+  <div class="dlg" id="dlgbox">
+    <button class="cerrar" id="cerrar" type="button" aria-label="Cerrar">✕</button>
+    <div class="gal">
+      <div class="zoom" id="zoom"><img id="g-img" alt=""></div>
+      <div class="thumbs" id="thumbs" role="group" aria-label="Fotos del producto"></div>
+    </div>
+    <div class="dlg-info">
+      <span class="tag" id="d-tag"></span>
+      <h2 id="d-title"></h2>
+      <div><div class="d-price" id="d-price"></div><div class="antes" id="d-antes" hidden></div></div>
+      <p class="envio">Envíos a todo México · Meses sin intereses con Mercado Pago</p>
+      <p class="alerta" id="d-pocas" hidden>Quedan pocas tallas de este modelo.</p>
+      <fieldset><legend>Talla (MX)</legend><div class="sizes" id="d-sizes"></div></fieldset>
+      <p class="nota">¿Dudas con tu talla? Mándanos la medida de tu pie en cm por WhatsApp.</p>
+      <div class="row"><span>Cantidad</span><div class="qty"><button id="qMenos" type="button" aria-label="Menos">−</button><span id="qNum">1</span><button id="qMas" type="button" aria-label="Más">+</button></div></div>
+      <p class="error" id="d-error" role="alert"></p>
+      <div class="row"><button class="btn wa big" id="d-buy" type="button">Comprar ahora</button><button class="btn ghost big" id="d-add" type="button">Agregar al carrito</button><button class="btn ghost big" id="d-share" type="button">Compartir</button></div>
+      <div><label for="cp"><b>Calcula tu entrega</b></label>
+        <div class="cp"><input id="cp" inputmode="numeric" maxlength="5" placeholder="Código postal" autocomplete="postal-code"><button class="btn ghost" id="cpBtn" type="button">Revisar</button></div>
+        <p class="res" id="cp-res" role="status"></p></div>
+      <div id="relBox" hidden><b>Más de esta marca</b><div class="rel" id="rel"></div></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="carrito" aria-labelledby="c-title">
+  <div class="cart">
+    <div class="cart-head"><h2 id="c-title">Tu carrito</h2><button id="cerrarC" type="button" aria-label="Cerrar carrito">✕</button></div>
+    <div class="cart-list" id="c-list"></div>
+    <div class="cart-foot">
+      <label for="c-nombre">Tu nombre</label><input id="c-nombre" maxlength="60" autocomplete="name" placeholder="Nombre y apellido">
+      <label for="c-dir">Colonia y calle de entrega (opcional)</label><input id="c-dir" maxlength="120" autocomplete="street-address" placeholder="Para entrega en mano">
+      <label for="c-entrega">Entrega</label>
+      <select id="c-entrega"><option>Entrega en mano (Atizapán / Nicolás Romero)</option><option>Envío nacional (Estafeta / FedEx)</option></select>
+      <label for="c-pago">Pago</label>
+      <select id="c-pago"></select>
+      <div class="total"><span>Total de productos</span><b id="c-total"></b></div>
+      <p class="nota">El costo del envío nacional se confirma por WhatsApp.</p>
+      <p class="error" id="c-error" role="alert"></p>
+      <button class="btn wa big full" id="c-buy" type="button">Finalizar por WhatsApp</button>
+      <button class="btn ghost full" id="c-clear" type="button">Vaciar carrito</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(() => {
+"use strict";
+// ====== CONFIGURA AQUÍ ======
+const WHATSAPP = "525636364852";
+const NEGOCIO = "StylesAmerican";
+const U = (id) => `https://images.unsplash.com/photo-${id}?w=800&q=80`;
+// Fotos de ejemplo para completar la galería. Reemplázalas por tus fotos reales en "fotos".
+const EXTRA = [U("1549298916-b41d501d3772"), U("1491553895911-0055eca6402d"), U("1460353581641-37baddab0fa2"), U("1525966222134-fcfa99b8ae77")];
+const P = [
+ {id:1,nombre:"Jordan 1 Retro High Chicago",marca:"Jordan",precio:2499,tag:"Más vendido",img:U("1551107696-a4b0c5a0d9a2"),tallas:[6,6.5,7,7.5,8,8.5,9]},
+ {id:2,nombre:"Nike Air Max 90 Triple White",marca:"Nike",precio:2199,tag:"Nuevo",img:U("1542291026-7eec264c27ff"),tallas:[5,6,6.5,7,8]},
+ {id:3,nombre:"Adidas Forum Low White Green",marca:"Adidas",precio:1899,tag:"Clásico",img:U("1600269452121-4f2416e55c28"),tallas:[6,7,7.5,8,9]},
+ {id:4,nombre:"Jordan 4 Retro Black Cat",marca:"Jordan",precio:2799,tag:"Jordan",img:U("1595950653106-6c9ebd614d3a"),tallas:[6,7,8,9]},
+ {id:5,nombre:"Nike Dunk Low Panda",marca:"Nike",precio:2299,tag:"Tendencia",img:U("1511556532299-8f662fc26c06"),tallas:[6,6.5,7,7.5,8]},
+ {id:6,nombre:"Adidas Yeezy Boost 350 V2",marca:"Adidas",precio:2599,tag:"Yeezy",img:U("1600185365483-26d7a4cc7519"),tallas:[6,7,8,8.5]},
+ {id:7,nombre:"New Balance 550 White Green",marca:"New Balance",precio:2150,tag:"New Balance",img:U("1555274175-6cbf6f3b137b"),tallas:[6,7,7.5,8]},
+ {id:8,nombre:"Jordan 11 Retro Cherry",marca:"Jordan",precio:3199,tag:"Premium",img:U("1606107557195-0e29a4b5b4aa"),tallas:[6,7,8,9]},
+ {id:9,nombre:"Adidas Forum Low (últimas tallas)",marca:"Adidas",precio:1899,tag:"Últimas tallas",img:U("1608231387042-66d1773070a"),tallas:[7,7.5]}
+ // Opcional por producto: antes:2999 (muestra precio tachado y % menos), fotos:["img/a.jpg","img/b.jpg"]
+];
+const BANNERS = [
+  {t:"Tus tenis favoritos, directo a tu puerta", s:"Elige modelo y talla, y cierra tu pedido por WhatsApp.", cta:"Ver catálogo", href:"#catalogo", p:1, bg:"linear-gradient(115deg,#0a0a1f,#2d1b78)"},
+  {t:"Entrega en Atizapán y Nicolás Romero", s:"Con opción de contraentrega en tu zona.", cta:"Calcular mi entrega", href:"#catalogo", p:6, bg:"linear-gradient(115deg,#06141f,#0d5565)"},
+  {t:"Envíos a todo México", s:"Estafeta y FedEx con guía de rastreo.", cta:"Pedir por WhatsApp", href:"wa", p:3, bg:"linear-gradient(115deg,#120820,#5a1f73)"}
+];
+const PAGE = 12; // modelos por página (con 30 pares se muestran 12 y luego «Ver más»)
+const PAGOS = ["Transferencia BBVA / Bancoppel","OXXO Pay","Mercado Pago / Tarjeta","Contraentrega"];
+// ============================
+
+P.forEach((p, i) => { p.fotos = p.fotos || [p.img, EXTRA[i % 4], EXTRA[(i + 1) % 4]]; });
+const COL = {1:{m:"#f4f4f4",a:"#c8102e",s:"#ffffff"},2:{m:"#f2f2f2",a:"#d6d6d6",s:"#ffffff"},3:{m:"#f7f7f7",a:"#1f7a4d",s:"#ffffff"},4:{m:"#1c1c1c",a:"#3a3a3a",s:"#2a2a2a"},5:{m:"#f5f5f5",a:"#111111",s:"#ffffff"},6:{m:"#cbc4b6",a:"#9d968a",s:"#ddd6c8"},7:{m:"#f3f3f3",a:"#2f6f4e",s:"#ececec"},8:{m:"#f4f4f4",a:"#b3122a",s:"#d9d9d9"},9:{m:"#f7f7f7",a:"#1f7a4d",s:"#ffffff"}};
+P.forEach((p) => { p.col = COL[p.id]; });
+// Ilustración de tenis: siempre se ve aunque una foto no cargue
+function ilus(p, i, solo) {
+  const c = (p && p.col) || {m:"#f4f4f4", a:"#333333", s:"#ffffff"};
+  const rot = [0, -6, 6][(i || 0) % 3];
+  const fondo = solo ? "" : '<defs><radialGradient id="g" cx="50%" cy="45%" r="70%"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e2e2e2"/></radialGradient></defs><rect width="400" height="400" fill="url(#g)"/><ellipse cx="205" cy="322" rx="150" ry="12" fill="rgba(0,0,0,.12)"/>';
+  const s = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">${fondo}<g transform="translate(200 205) rotate(${rot}) scale(1.1) translate(-211 -225)">`
+    + `<path d="M60 262Q60 250 82 250L336 250Q362 252 363 272L363 286Q362 300 340 300L84 300Q60 300 60 284Z" fill="${c.s}" stroke="rgba(0,0,0,.25)" stroke-width="2"/>`
+    + `<path d="M62 268L362 268" stroke="${c.a}" stroke-width="5"/>`
+    + `<path d="M86 252L84 178Q84 150 108 148L150 146Q172 146 186 162L200 186Q216 206 262 212Q332 222 358 246L361 252Z" fill="${c.m}" stroke="rgba(0,0,0,.3)" stroke-width="2.5" stroke-linejoin="round"/>`
+    + `<path d="M84 178Q84 150 108 148L136 147L128 192L85 192Z" fill="${c.a}"/>`
+    + `<path d="M286 219Q338 228 358 246L361 252L282 252Z" fill="${c.a}"/>`
+    + `<path d="M150 146L176 118Q188 114 192 128L190 164Z" fill="${c.m}" stroke="rgba(0,0,0,.3)" stroke-width="2"/>`
+    + `<path d="M168 170L192 160M178 184L204 172M190 198L216 186" stroke="rgba(0,0,0,.35)" stroke-width="5" stroke-linecap="round"/>`
+    + `</g></svg>`;
+  return "data:image/svg+xml," + encodeURIComponent(s);
+}
+const MXN = new Intl.NumberFormat("es-MX", {style:"currency", currency:"MXN", maximumFractionDigits:0});
+const FALLBACK = "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#1d1d20"/><text x="200" y="205" fill="#6b6b73" font-family="sans-serif" font-size="20" text-anchor="middle">Foto próximamente</text></svg>');
+const $ = (id) => document.getElementById(id);
+const byId = (id) => P.find((p) => p.id === id);
+const wa = (t) => `https://wa.me/${WHATSAPP}` + (t ? `?text=${encodeURIComponent(t)}` : "");
+const money = (n) => MXN.format(n);
+function el(t, c, x) { const n = document.createElement(t); if (c) n.className = c; if (x !== undefined) n.textContent = x; return n; }
+function img(src, alt, p, k) { const i = el("img"); i.alt = alt; i.loading = "lazy"; i.src = src; i.addEventListener("error", () => { i.src = p ? ilus(p, k || 0) : FALLBACK; }, {once:true}); return i; }
+function btn(txt, label, fn) { const b = el("button", "", txt); b.type = "button"; if (label) b.setAttribute("aria-label", label); b.addEventListener("click", fn); return b; }
+const store = {
+  get(k, d) { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+};
+let tt; function toast(m) { const t = $("toast"); t.textContent = m; t.classList.add("show"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("show"), 2200); }
+
+// Estado (se valida lo guardado en el navegador para que nadie lo manipule)
+const rc = store.get("g23cart", []), rf = store.get("g23favs", []);
+let cart = (Array.isArray(rc) ? rc : []).filter((i) => i && byId(i.id) && byId(i.id).tallas.includes(i.talla) && Number.isInteger(i.qty) && i.qty > 0 && i.qty <= 10)
+  .map((i) => ({id:i.id, talla:i.talla, qty:i.qty}));
+let favs = (Array.isArray(rf) ? rf : []).filter((id) => byId(id));
+let marca = "Todos", orden = "rel", q = "", pmin = 0, pmax = 0, soloFav = false, ftalla = null, mostrar = 12, lastSig = "";
+let actual = null, talla = null, qty = 1;
+const dlg = $("detalle"), cdlg = $("carrito");
+
+["waFoot", "waFlot"].forEach((id) => { $(id).href = wa(`Hola ${NEGOCIO}, quiero información.`); });
+$("year").textContent = new Date().getFullYear();
+P.forEach((p) => { const o = el("option"); o.value = p.nombre; $("sug").appendChild(o); });
+PAGOS.forEach((m) => $("c-pago").appendChild(el("option", "", m)));
+
+function lock() { document.body.classList.toggle("bloqueado", dlg.open || cdlg.open); }
+function badges() { $("nCart").textContent = cart.reduce((s, i) => s + i.qty, 0); $("nFav").textContent = favs.length; }
+function guardar() { store.set("g23cart", cart); store.set("g23favs", favs); badges(); pintarCarrito(); }
+
+// Catálogo
+["Todos", ...new Set(P.map((p) => p.marca))].forEach((m) => {
+  const b = el("button", "chip", m); b.type = "button"; b.setAttribute("aria-pressed", String(m === marca));
+  b.addEventListener("click", () => { marca = m; $("chips").querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", String(c === b))); pintar(); });
+  $("chips").appendChild(b);
+});
+$("buscar").addEventListener("input", (e) => { q = e.target.value.trim().toLowerCase().slice(0, 40); pintar(); });
+$("buscar").addEventListener("keydown", (e) => { if (e.key === "Enter") $("catalogo").scrollIntoView(); });
+$("orden").addEventListener("change", (e) => { orden = e.target.value; pintar(); });
+const num = (v) => Math.min(99999, Math.max(0, Number(v) || 0));
+$("pmin").addEventListener("input", (e) => { pmin = num(e.target.value); pintar(); });
+$("pmax").addEventListener("input", (e) => { pmax = num(e.target.value); pintar(); });
+$("verFav").addEventListener("click", () => { soloFav = !soloFav; $("verFav").setAttribute("aria-pressed", String(soloFav)); $("catalogo").scrollIntoView(); pintar(); });
+
+function pintar() {
+  let l = P.filter((p) => (marca === "Todos" || p.marca === marca) && (p.nombre + " " + p.marca).toLowerCase().includes(q)
+    && (!pmin || p.precio >= pmin) && (!pmax || p.precio <= pmax) && (!soloFav || favs.includes(p.id)) && (ftalla === null || p.tallas.includes(ftalla)));
+  if (orden === "menor") l.sort((a, b) => a.precio - b.precio);
+  if (orden === "mayor") l.sort((a, b) => b.precio - a.precio);
+  const g = $("grid"); g.replaceChildren();
+  const sig = [marca, orden, q, pmin, pmax, soloFav, ftalla].join("|");
+  if (sig !== lastSig) { mostrar = PAGE; lastSig = sig; }
+  const total = l.length;
+  $("contador").textContent = `${Math.min(mostrar, total)} de ${total} ${total === 1 ? "modelo" : "modelos"}`;
+  $("mas").hidden = true;
+  if (!l.length) {
+    const v = el("div", "vacio", "No encontramos ese modelo. "); const a = el("a", "", "Escríbenos y lo conseguimos.");
+    a.href = wa(`Hola ${NEGOCIO}, busco un modelo que no está en el catálogo.`); a.target = "_blank"; a.rel = "noopener";
+    v.appendChild(a); g.appendChild(v); return;
+  }
+  l.slice(0, mostrar).forEach((p) => {
+    const c = el("article", "card");
+    const b = el("button", "cardbtn"); b.type = "button"; b.setAttribute("aria-label", `Ver ${p.nombre}`);
+    const info = el("span", "info");
+    info.append(el("span", "tag", p.tag), el("span", "nombre", p.nombre), el("span", "precio", money(p.precio)));
+    if (p.antes && p.antes > p.precio) info.insertBefore(el("span", "antes", money(p.antes)), info.lastChild);
+    info.append(el("span", "envio", "Envíos a todo México"));
+    if (p.tallas.length <= 2) info.append(el("span", "pocas", "Quedan pocas tallas"));
+    b.append(img(p.fotos[0], p.nombre, p, 0), info); b.addEventListener("click", () => abrir(p));
+    const f = el("button", "fav", favs.includes(p.id) ? "♥" : "♡"); f.type = "button";
+    f.setAttribute("aria-label", "Guardar en favoritos"); f.setAttribute("aria-pressed", String(favs.includes(p.id)));
+    f.addEventListener("click", () => {
+      favs = favs.includes(p.id) ? favs.filter((x) => x !== p.id) : [...favs, p.id];
+      store.set("g23favs", favs); badges();
+      if (soloFav) pintar(); else { const on = favs.includes(p.id); f.textContent = on ? "♥" : "♡"; f.setAttribute("aria-pressed", String(on)); }
+      toast(favs.includes(p.id) ? "Guardado en favoritos" : "Quitado de favoritos");
+    });
+    c.append(b, f); g.appendChild(c);
+  });
+  $("mas").hidden = total <= mostrar;
+}
+
+// Detalle con galería
+function foto(i) {
+  const s = actual.fotos[i]; const gi = $("g-img");
+  gi.alt = actual.nombre; gi.src = s; gi.onerror = () => { gi.onerror = null; gi.src = ilus(actual, i); };
+  $("thumbs").querySelectorAll(".thumb").forEach((t, k) => t.setAttribute("aria-pressed", String(k === i)));
+}
+function abrir(p) {
+  anotarVisto(p); try { history.replaceState(null, "", "#p" + p.id); } catch {}
+  $("d-pocas").hidden = p.tallas.length > 2;
+  actual = p; talla = null; qty = 1; $("qNum").textContent = 1; $("d-error").textContent = ""; $("cp").value = ""; $("cp-res").textContent = "";
+  $("d-tag").textContent = p.tag; $("d-title").textContent = p.nombre; $("d-price").textContent = money(p.precio);
+  const a = $("d-antes");
+  if (p.antes && p.antes > p.precio) { a.textContent = `${money(p.antes)} · ${Math.round(100 - p.precio * 100 / p.antes)}% menos`; a.hidden = false; } else a.hidden = true;
+  const th = $("thumbs"); th.replaceChildren();
+  p.fotos.forEach((s, i) => { const t = el("button", "thumb"); t.type = "button"; t.setAttribute("aria-label", `Foto ${i + 1}`); t.append(img(s, "", p, i)); t.addEventListener("click", () => foto(i)); th.appendChild(t); });
+  foto(0);
+  const sz = $("d-sizes"); sz.replaceChildren();
+  p.tallas.forEach((t) => {
+    const b = el("button", "size", String(t)); b.type = "button"; b.setAttribute("aria-pressed", "false");
+    b.addEventListener("click", () => { sz.querySelectorAll(".size").forEach((s) => s.setAttribute("aria-pressed", "false")); b.setAttribute("aria-pressed", "true"); talla = t; $("d-error").textContent = ""; });
+    sz.appendChild(b);
+  });
+  const rel = P.filter((x) => x.marca === p.marca && x.id !== p.id).slice(0, 3);
+  $("relBox").hidden = !rel.length; $("rel").replaceChildren();
+  rel.forEach((x) => { const m = el("button", "mini"); m.type = "button"; m.append(el("b", "", x.nombre), el("span", "muted", money(x.precio))); m.addEventListener("click", () => abrir(x)); $("rel").appendChild(m); });
+  if (!dlg.open) dlg.showModal();
+  lock(); $("dlgbox").scrollTop = 0;
+}
+$("zoom").addEventListener("mousemove", (e) => { const r = $("zoom").getBoundingClientRect(); $("g-img").style.transformOrigin = `${(e.clientX - r.left) / r.width * 100}% ${(e.clientY - r.top) / r.height * 100}%`; });
+$("qMenos").addEventListener("click", () => { qty = Math.max(1, qty - 1); $("qNum").textContent = qty; });
+$("qMas").addEventListener("click", () => { qty = Math.min(10, qty + 1); $("qNum").textContent = qty; });
+$("cpBtn").addEventListener("click", () => {
+  const v = $("cp").value.trim(), r = $("cp-res");
+  if (!/^\d{5}$/.test(v)) { r.textContent = "Escribe un código postal de 5 dígitos."; return; }
+  const n = Number(v);
+  r.textContent = (n >= 52900 && n <= 52999) || (n >= 54400 && n <= 54499)
+    ? "Entrega en mano disponible, con opción de contraentrega."
+    : "Envío nacional por Estafeta o FedEx. Te cotizamos el costo por WhatsApp.";
+});
+function agregar() {
+  if (!actual) return false;
+  if (talla === null) { $("d-error").textContent = "Elige tu talla para continuar."; return false; }
+  const it = cart.find((i) => i.id === actual.id && i.talla === talla);
+  if (it) it.qty = Math.min(10, it.qty + qty); else cart.push({id:actual.id, talla, qty});
+  guardar(); return true;
+}
+$("d-add").addEventListener("click", () => { if (agregar()) toast("Agregado al carrito"); });
+$("d-buy").addEventListener("click", () => { if
