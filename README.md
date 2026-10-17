@@ -1,5 +1,5 @@
 # Sneakers Online MX - E-commerce Seguro Enterprise
-![Banner](assets/banner-sneakers.png)
+![Banner](IMG-20261017-WA3432.jpg)
 ![WAF](https://img.shields.io/badge/WAF-Activo-green)
 ![Stack](https://img.shields.io/badge/Python%2BSwift-FastAPI-blue)
 ![MX](https://img.shields.io/badge/Focus-Mexico-red)
