@@ -1,21 +1,22 @@
-# SNEAKERS MX - Tienda de Tenis Online
+# Sneakers Online MX - E-commerce Seguro Enterprise
+![Banner](assets/banner-sneakers.png)
+![WAF](https://img.shields.io/badge/WAF-Activo-green)
+![Stack](https://img.shields.io/badge/Python%2BSwift-FastAPI-blue)
+![MX](https://img.shields.io/badge/Focus-Mexico-red)
 
-E-commerce de tenis con fotos reales, selector de tallas MX y carrito con checkout directo a WhatsApp.
+**Autor:** Giovani Martinez Guzman | Ecatepec, MX | Fibotech
+**Live Demo:** Localhost:8000 | **WAF:** ANTI-SUPLANTACIÓN TOTAL
 
-### 🚀 app
-https://sneakers-online-git-main-giovani547.vercel.app/
+E-commerce de sneakers con blindaje anti-fraude para México. No es solo tienda, es tienda **segura**.
 
-### ✨ Funciones
-- Catalogo con fotos de tenis en alta
-- Precios en MXN y tallas MX 25-30
-- Modal con foto grande + selector de talla
-- Carrito dinamico
-- Checkout directo a WhatsApp: +52 56 3636 4852
-- Responsive estilo Nike
+### 🚀 Qué lo hace PRO
+- **WAF Defensivo:** Detecta faceb00k, xn--, bbva.mx@phishing
+- **Checkout Seguro:** CURP/RFC, 3D Secure, no guarda tarjetas - LFPDPPP
+- **Backend:** FastAPI + scoring 0-100
+- **Seguridad MX:** Headers `X-WAF-By: Giovani-Martinez`
 
-### 🛠️ Tecnologias
-HTML5 / CSS3 / JavaScript Vanilla / LocalStorage / WhatsApp API
-
-### 👨‍💻 Autor
-Giovani Perez Martinez - CDMX Pedregal - 56 3636 4852
-GitHub: Giovani547
+### 🛠️ Quick Start
+```bash
+pip install -r requirements.txt
+uvicorn api.main:app --reload
+# Docs en http://localhost:8000/docs
