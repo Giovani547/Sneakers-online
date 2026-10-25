@@ -1,6 +1,4 @@
 
-**2. Archivo: `api/main.py`**
-```python
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
