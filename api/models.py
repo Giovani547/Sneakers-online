@@ -5,8 +5,8 @@ class Sneaker(BaseModel):
     nombre: str
     precio: float
     stock: bool = True
+    talla: str = ""
 
-class Checkout(BaseModel):
-    curp: str
-    rfc: str
+class ConsultaWhatsApp(BaseModel):
     sneaker_id: int
+    mensaje: str = "Hola, me interesa este par"
