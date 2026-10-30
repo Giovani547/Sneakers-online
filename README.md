@@ -4,14 +4,14 @@
 ![Stack](https://img.shields.io/badge/Python%2BSwift-FastAPI-blue)
 ![MX](https://img.shields.io/badge/Focus-Mexico-red)
 
-**Autor:** Giovani Martinez Guzman | Ecatepec, MX | Fibotech
-**Live Demo:** Localhost:8000 | **WAF:** ANTI-SUPLANTACIÓN TOTAL
+**Autor: Giovani Martinez Guzman | Ecatepec, MX | Fibotech CON ANTI-SUPLANTACIÓN TOTAL
 
-E-commerce de sneakers con blindaje anti-fraude para México. No es solo tienda, es tienda **segura**.
+E-commerce de sneakers sin peticiones de credenciales ni inicio de seción todo por Whatsapp personal del propietario precios y modos de pedido
 
 ### 🚀 Qué lo hace PRO
 - **WAF Defensivo:** Detecta faceb00k, xn--, bbva.mx@phishing
-- **Checkout Seguro:** CURP/RFC, 3D Secure, no guarda tarjetas - LFPDPPP
+- **Checkout Seguro:** nombre ubicación modo de pago todo por Whatsapp las peticiones las haces el cliente directo en el WhatsApp del propietario 
+
 - **Backend:** FastAPI + scoring 0-100
 - **Seguridad MX:** Headers `X-WAF-By: Giovani-Martinez`
 
