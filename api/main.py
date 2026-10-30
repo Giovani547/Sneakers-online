@@ -6,7 +6,7 @@ app = FastAPI(title="STYLESAMERICAN - WAF Defensivo")
 # 1. CORS CERRADO - Solo tu dominio puede usar la API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://sneakers-online-theta.vercel.app"],
+    allow_origins=["https://sneakers-online-sme7.vercel.app"],
     allow_methods=["GET"],
     allow_headers=["*"],
 )
