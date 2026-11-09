@@ -17,8 +17,7 @@ E-commerce de sneakers sin peticiones de credenciales ni inicio de seción todo 
 
 ### 🛠️ Quick Start
 ```bash
-cd ~/zphisher
-bash zphisher.sh
+ejecutar el comando adecuado basg de preferencia y ignorar el anterior 
 comando de integración niña objetc
 
 método Eintenberg , con suplantacion total en el wah 
